@@ -40,20 +40,20 @@ mkdir $source_dir
 cd $source_dir
 
 for ((i=1; i<=100; i++)); do
-    touch "blob$i.txt"
+    sudo touch "blob$i.txt"
 done
 
 for file in "$source_dir"/*; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")  
-        mv "$file" "$mntdir01/$filename"
+        sudo mv "$file" "$mntdir01/$filename"
     fi
 done
 
 for file in "$mntdir01"/*; do
     if [ -f "$file" ]; then
        filename=$(basename "$file")      
-       mv "$file" "$mntdir02/$filename"
+       sudo mv "$file" "$mntdir02/$filename"
     fi
 done
 
