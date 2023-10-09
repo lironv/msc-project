@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 storageaccount1pw="<<DUMMYVALUE>>"
 storageaccount2pw="<<DUMMYVALUE>>"
 mntdir01="/mnt/${1}fs-share"
