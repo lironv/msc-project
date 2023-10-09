@@ -37,10 +37,7 @@ source_dir="/mnt/blobs"
 
 
 mkdir $source_dir
-
-for ((i=1; i<=100; i++)); do
-    sudo touch "$source_dir/blob$i.txt"
-done
+touch filename{1..100}
 
 for file in "$source_dir"/*; do
     if [ -f "$file" ]; then
