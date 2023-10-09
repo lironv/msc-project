@@ -16,10 +16,6 @@ steps:
 
 
 
-- task: PowerShell@2
+- task: ShellScript@2
   inputs:
-    filePath: '$(Build.SourcesDirectory)/creationscript.sh'
-
-
-
-
+    scriptPath: '$(Build.SourcesDirectory)/creationscript.sh'
