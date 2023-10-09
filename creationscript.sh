@@ -2,16 +2,16 @@
 
 appConfigName=runnerconfig
 
-az account set --subscription 98eb592d-460e-4f2a-a0fd-958deefc49e0
-az group create --name resourcegroup --location eastus
-vmpassword=$(openssl rand -base64 10)
+# az account set --subscription 98eb592d-460e-4f2a-a0fd-958deefc49e0
+# az group create --name resourcegroup --location eastus
+# vmpassword=$(openssl rand -base64 10)
 
-escappedvmpasswordvalue=$(printf '%s\n' "$vmpassword" | sed 's/[]\/$*.^[]/\\&/g')
-sed -i -e "s/<<DUMMYVALUE>>/$vmpassword/" ./bastion.parameters.json
+# escappedvmpasswordvalue=$(printf '%s\n' "$vmpassword" | sed 's/[]\/$*.^[]/\\&/g')
+# sed -i -e "s/<<DUMMYVALUE>>/$vmpassword/" ./bastion.parameters.json
 
-az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters saparam.parameters.json
-az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters sa2param.parameters.json
-az deployment group create --resource-group resourcegroup --template-file linuxtemplate.json --parameters bastion.parameters.json
+# az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters saparam.parameters.json
+# az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters sa2param.parameters.json
+# az deployment group create --resource-group resourcegroup --template-file linuxtemplate.json --parameters bastion.parameters.json
 
 storageaccount1name="sastorage01"
 storageaccount2name="sastorage02"
