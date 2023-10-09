@@ -1,6 +1,6 @@
 
-storageaccount1pw="<<DUMMYVALUE>>"
-storageaccount2pw="<<DUMMYVALUE>>"
+storageaccount1pw="<<DUMMYVALUEPASSWORD1>>"
+storageaccount2pw="<<DUMMYVALUEPASSWORD2>>"
 mntdir01="/mnt/${1}fs-share"
 mntdir02="/mnt/${2}fs-share"
 source_dir="/mnt/blobs"
