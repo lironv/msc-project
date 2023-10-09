@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+      "parameters": {
+        "vmName": {
+          "value": "bastion1"
+        },
+        "adminUsername": {
+          "value": "bastion"
+        },
+        "authenticationType": {
+          "value": "password"
+        },
+        "adminPasswordOrKey": {
+          "value": "<<DUMMYVALUE>>"
+        },
+        "ubuntuOSVersion": {
+          "value": "Ubuntu-2004"
+        },
+        "location": {
+          "value":  "eastus"
+        },
+        "vmSize": {
+          "value":  "Standard_B2s"
+        },
+        "subnetName": {
+          "value":  "internal"
+      }
+    }
+}
