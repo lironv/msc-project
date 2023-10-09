@@ -37,10 +37,9 @@ sudo mount -t cifs //${2}projectmsc.file.core.windows.net/${2}fs-share ${mntdir0
 
 
 mkdir $source_dir
-cd $source_dir
 
 for ((i=1; i<=100; i++)); do
-    sudo touch "blob$i.txt"
+    sudo touch "$source_dir/blob$i.txt"
 done
 
 for file in "$source_dir"/*; do
