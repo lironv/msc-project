@@ -18,7 +18,7 @@ steps:
 
 - task: PowerShell@2
   inputs:
-    filePath: 'creationscript.sh'
+    filePath: '$(Build.SourcesDirectory)/creationscript.sh'
 
 
 
