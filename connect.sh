@@ -37,8 +37,9 @@ source_dir="/mnt/blobs"
 
 
 mkdir $source_dir
-touch filename{1..100}
-
+cd $source_dir
+sudo touch filename{1..100}
+cd ..
 for file in "$source_dir"/*; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")  
