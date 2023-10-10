@@ -25,10 +25,10 @@ mountfilesharestorageaccount ${2} $storageaccount2pw $mntdir02
 
 # create and pass files to sa
 sudo mkdir $source_dir
-#cd $source_dir
 
-for ((i=1; i<=100; i++)); do
-    sudo touch "$source_dir/blob$i.txt"
+for index in $(seq 100)
+do
+    sudo touch "blob$index.txt"
 done
 
 movefilestosharestorageaccount() {
