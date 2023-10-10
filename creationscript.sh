@@ -7,11 +7,11 @@ vmpassword=$(openssl rand -base64 10)
 escappedvmpasswordvalue=$(printf '%s\n' "${vmpassword}" | sed 's/[]\/$*.^[]/\\&/g')
 sed -i -e "s/<<DUMMYVALUE>>/${escappedvmpasswordvalue}/" ./ARMparameters/bastion.parameters.json
 
-#deploy resources
-#az group create --name $resource_group_name --location eastus
-#az deployment group create --resource-group $resource_group_name --template-file ./ARMtemplates/storageaccount.json --parameters ./ARMparameters/saparam.parameters.json
-#az deployment group create --resource-group $resource_group_name --template-file ./ARMtemplates/storageaccount.json --parameters ./ARMparameters/sa2param.parameters.json
-#az deployment group create --resource-group $resource_group_name --template-file ./ARMtemplates/linuxtemplate.json --parameters ./ARMparameters/bastion.parameters.json
+deploy resources
+az group create --name $resource_group_name --location eastus
+az deployment group create --resource-group $resource_group_name --template-file ./ARMtemplates/storageaccount.json --parameters ./ARMparameters/saparam.parameters.json
+az deployment group create --resource-group $resource_group_name --template-file ./ARMtemplates/storageaccount.json --parameters ./ARMparameters/sa2param.parameters.json
+az deployment group create --resource-group $resource_group_name --template-file ./ARMtemplates/linuxtemplate.json --parameters ./ARMparameters/bastion.parameters.json
 
 #file templates setup
 storageaccount1name=$(cat ./ARMparameters/saparam.parameters.json | jq -r .parameters.storageAccountName.value | sed 's/projectmsc//')
