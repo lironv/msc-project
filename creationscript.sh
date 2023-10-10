@@ -6,12 +6,12 @@ appConfigName=runnerconfig
 # az group create --name resourcegroup --location eastus
 # vmpassword=$(openssl rand -base64 10)
 
-# escappedvmpasswordvalue=$(printf '%s\n' "$vmpassword" | sed 's/[]\/$*.^[]/\\&/g')
-# sed -i -e "s/<<DUMMYVALUE>>/$vmpassword/" ./bastion.parameters.json
+ escappedvmpasswordvalue=$(printf '%s\n' "$vmpassword" | sed 's/[]\/$*.^[]/\\&/g')
+ sed -i -e "s/<<DUMMYVALUE>>/$vmpassword/" ./bastion.parameters.json
 
-# az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters saparam.parameters.json
-# az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters sa2param.parameters.json
-# az deployment group create --resource-group resourcegroup --template-file linuxtemplate.json --parameters bastion.parameters.json
+ az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters saparam.parameters.json
+ az deployment group create --resource-group resourcegroup --template-file storageaccount2.json --parameters sa2param.parameters.json
+ az deployment group create --resource-group resourcegroup --template-file linuxtemplate.json --parameters bastion.parameters.json
 
 storageaccount1name="sastorage01"
 storageaccount2name="sastorage02"
@@ -25,7 +25,5 @@ echo $escappedpasswordvalue2
 
 sed -i -e "s/<<DUMMYVALUEPASSWORD1>>/${escappedpasswordvalue1}/" ./connect.sh
 sed -i -e "s/<<DUMMYVALUEPASSWORD2>>/${escappedpasswordvalue2}/" ./connect.sh
-ls
-pwd
 
 az vm run-command invoke -g resourcegroup -n bastion1 --command-id RunShellScript --scripts "@connect.sh" --parameters $storageaccount1name $storageaccount2name 
