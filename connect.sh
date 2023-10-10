@@ -24,11 +24,11 @@ mountfilesharestorageaccount ${1} $storageaccount1pw $mntdir01
 mountfilesharestorageaccount ${2} $storageaccount2pw $mntdir02
 
 # create and pass files to sa
-sudo mkdir $source_dir
-cd $source_dir
+#sudo mkdir $source_dir
+#cd $source_dir
 
 for ((i=1; i<=100; i++)); do
-    sudo touch "blob$i.txt"
+    sudo touch "$source_dir/blob$i.txt"
 done
 
 movefilestosharestorageaccount() {
