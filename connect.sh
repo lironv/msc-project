@@ -20,8 +20,8 @@ mountfilesharestorageaccount() {
     sudo mount -t cifs //${1}projectmsc.file.core.windows.net/${1}fs-share ${3} -o credentials=/etc/smbcredentials/${1}projectmsc.cred,dir_mode=0777,file_mode=0777,serverino,nosharesock,actimeo=30
 }
 
-mountfilesharestorageaccount $storageaccount1name $storageaccount1pw $mntdir01
-mountfilesharestorageaccount $storageaccount2name $storageaccount2pw $mntdir02
+mountfilesharestorageaccount ${1} $storageaccount1pw $mntdir01
+mountfilesharestorageaccount ${1} $storageaccount2pw $mntdir02
 
 # create and pass files to sa
 mkdir $source_dir
