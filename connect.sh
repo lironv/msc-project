@@ -9,7 +9,7 @@ mountfilesharestorageaccount() {
     #arguments: storageaccount name, storageaccount password, mount directory, 
     sudo mkdir $3
     if [ ! -d "/etc/smbcredentials" ]; then
-    sudo mkdir /etc/smbcredentials
+        sudo mkdir /etc/smbcredentials
     fi
     if [ ! -f "/etc/smbcredentials/${1}projectmsc.cred" ]; then
         sudo bash -c "echo \"username=${1}projectmsc\" >> /etc/smbcredentials/${1}projectmsc.cred"
