@@ -1,5 +1,5 @@
 
-storageaccount1pw="<<DUMMYVALUEPASSWORD1>>"
+storageaccount1pw="mA+KROWAhR3+bSv9n/7pj94vpex1sviup5jo4QxEvP40yVumigyuR5Y4cztASBpXQfJXVQSb7iAL+AStd+PnQg=="
 storageaccount2pw="<<DUMMYVALUEPASSWORD2>>"
 mntdir01="/mnt/${1}fs-share"
 mntdir02="/mnt/${2}fs-share"
