@@ -2,7 +2,6 @@
 
 appConfigName=runnerconfig
 
- az account set --subscription 98eb592d-460e-4f2a-a0fd-958deefc49e0
  az group create --name resourcegroup --location eastus
  vmpassword=$(openssl rand -base64 10)
 
@@ -18,8 +17,6 @@ storageaccount2name="sastorage02"
 storageaccount1pw=$(az storage account keys list --account-name sastorage01projectmsc  --query '[0].value' --output tsv)
 storageaccount2pw=$(az storage account keys list --account-name sastorage02projectmsc  --query '[0].value' --output tsv)
 
-escappedpasswordvalue1=$(printf '%s\n' "$storageaccount1pw" | sed 's/[]\/$*.^[]/\\&/g')
-escappedpasswordvalue2=$(printf '%s\n' "$storageaccount2pw" | sed 's/[]\/$*.^[]/\\&/g')
 echo $escappedpasswordvalue1
 echo $escappedpasswordvalue2
 
