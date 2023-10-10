@@ -39,12 +39,11 @@ source_dir="/mnt/blobs"
 
 #sudo mkdir $source_dir
 cd $source_dir
-
-for i in {1..100}; do
-    sudo touch "filename$i"
-    echo !! 
-    ls
+for index in $(seq 100)
+do
+    sudo touch "blob$index.txt"
 done
+
 for file in "$source_dir"/*; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")  
