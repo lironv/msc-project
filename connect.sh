@@ -38,7 +38,8 @@ source_dir="/mnt/blobs"
 
 #mkdir $source_dir
 cd $source_dir
-for i in {1..100}; do touch "filename$i"; done
+
+for i in {1..100}; do sudo touch "filename$i"; done
 cd ..
 for file in "$source_dir"/*; do
     if [ -f "$file" ]; then
