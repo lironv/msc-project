@@ -36,7 +36,7 @@ source_dir="/mnt/blobs"
 # create and pass files to sa
 
 
-mkdir $source_dir
+#mkdir $source_dir
 cd $source_dir
 for i in {1..100}; do touch "filename$i"; done
 cd ..
