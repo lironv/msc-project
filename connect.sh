@@ -28,7 +28,7 @@ source_dir="/mnt/blobs"
 
 for index in $(seq 100)
 do
-    sudo touch "blob$index.txt"
+    sudo touch "$source_dir/blob$index.txt"
 done
 
 movefilestosharestorageaccount() {
