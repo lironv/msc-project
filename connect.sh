@@ -21,7 +21,7 @@ mountfilesharestorageaccount() {
 }
 
 mountfilesharestorageaccount ${1} $storageaccount1pw $mntdir01
-mountfilesharestorageaccount ${1} $storageaccount2pw $mntdir02
+mountfilesharestorageaccount ${2} $storageaccount2pw $mntdir02
 
 # create and pass files to sa
 sudo mkdir $source_dir
