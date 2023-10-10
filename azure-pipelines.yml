@@ -8,5 +8,5 @@ pool: Default
 steps:
 - task: ShellScript@2
   inputs:
-    scriptPath: '$(Build.SourcesDirectory)/connect.sh'
+    scriptPath: '$(Build.SourcesDirectory)/creationscript.sh'
 
