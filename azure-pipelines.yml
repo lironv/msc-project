@@ -1,0 +1,10 @@
+trigger:
+- master
+
+pool: Default
+
+steps:
+- task: ShellScript@2
+  inputs:
+    scriptPath: '$(Build.SourcesDirectory)/creationscript.sh'
+
