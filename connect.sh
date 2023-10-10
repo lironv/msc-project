@@ -36,11 +36,11 @@ source_dir="/mnt/blobs"
 # create and pass files to sa
 
 
-#mkdir $source_dir
+
+sudo mkdir $source_dir
 cd $source_dir
 
 for i in {1..100}; do sudo touch "filename$i"; done
-cd ..
 for file in "$source_dir"/*; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")  
