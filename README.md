@@ -4,24 +4,36 @@
 <!-- ABOUT THE PROJECT -->
 ## 
 
-This project aims to automate the deployment of an Azure Linux Virtual Machine (VM) with two service accounts using a file share system. It also involves creating and transferring 100 files between these accounts. This resources will be achieved through ARM templates, Continuous Integration and Continuous Deployment (CI/CD) with shell scripts, and Azure DevOps pipelines with a dedicated agent.
+This project aims to automate the deployment of an Azure Linux Virtual Machine (VM) with two service accounts using a file share system. It also involves creating and transferring 100 files between these accounts.
+This resources will be achieved through ARM templates, Continuous Integration and Continuous Deployment (CI/CD) with shell scripts, and Azure DevOps pipelines with a dedicated agent.
 
 <!-- GETTING STARTED -->
+
 ## ARM templates
 Azure resource manager - ARM templates are JSON files that define the resources you need to deploy in Azure, along with their configuration settings and dependencies. These templates enable you to define your infrastructure as code.
-in this project i created 2 ARM templates which creates:
-- linux virtual machine
-- storage account which includes fileshare storage service.
+In this project i created 2 ARM templates which creates:
+- Linux virtual machine
+- Storage account which includes fileshare storage service.
 * each of the template include all the necessary resources for deployment eg. compute, network subnets, public ip and such.
 
- 
-### Deployment
+## Parameters
+
+For security i have added dummy values over the passwords, the linux vm password is generated and used, the storage accounts passwords are taken and added to the shell script thus not compromise security. 
+Each of the ARM templates is using parameters files that can be changed for multiple deployments.
+
+
+## CICD
+Using azure devops pipeline we call the shell script which automatically deploys the resources.
+In my methodology, inside the shell script i run another script called connect.sh that runs the creation of blobs and moving them between the resources.
+
+
+## Deployment
 
 To deploy the project you will need the following:
 
-1. Azure agent which connected to azure subscription account 
+1. Azure agent which connected to azure subscription account.
 2. Azure devops project and connecting the agent to the project.
-3. running the azure-pipelines.yml file from the Github repository 
+3. Running the azure-pipelines.yml file from the Github repository.
 
 
 
