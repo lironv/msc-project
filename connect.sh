@@ -36,7 +36,7 @@ movefilestosharestorageaccount() {
     for file in "$1"/*; do
         if [ -f "$file" ]; then
            filename=$(basename "$file")      
-           sudo mv "$file" "$2/$filename"
+           sudo cp "$file" "$2/$filename"
         fi
     done
 }
