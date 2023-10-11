@@ -27,17 +27,34 @@ Using azure devops pipeline we call the shell script which automatically deploys
 In my methodology, inside the shell script i run another script called connect.sh that runs the creation of blobs and moving them between the resources.
 
 
-## Deployment
+## Deployment and run. 
 
 To deploy the project you will need the following:
 
 1. Azure agent which connected to azure subscription account.
 2. Azure devops project and connecting the agent to the project.
 3. Running the azure-pipelines.yml file from the Github repository.
+   
+## Execute
+to run this project on your own bastion you need an azure self hosted agent and connecting it to azure subscription account.
+1. define your wanted variables:
+   - creationscript.sh: resource_group_name="your resource group name", vmpassword="password"(currently its auto generating a password)
+   - bastion.parameters.json: "adminUsername": "value"
+   - sa2param.parameters.json:
+       - "storageAccountName": {"value": "(your storage account name here) projectmsc" }
+       - "fileShareName": {"value": "(your fileshare name here)fs-share" }
+   - saparam.parameters.json:
+       - "storageAccountName": {"value": "(your storage account name here) projectmsc" }
+       - "fileShareName": {"value": "(your fileshare name here)fs-share" }
 
+     
+     
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 ![image](https://github.com/lironv/msc-project/assets/45284793/d502997d-9497-451c-a32f-975d23bd262a)
+
+## Monitor
+![image](https://github.com/lironv/msc-project/assets/45284793/28a639eb-0158-4547-99b2-07c279f4a4a7)
 
