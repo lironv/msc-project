@@ -39,4 +39,5 @@ To deploy the project you will need the following:
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+![image](https://github.com/lironv/msc-project/assets/45284793/d502997d-9497-451c-a32f-975d23bd262a)
 
